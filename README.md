@@ -58,27 +58,27 @@
  1️⃣  아두이노 코드 요약  
 - TaskScheduler 기반 비동기 신호등 제어  
 
-trafficLightTask: 적색(🔴) → 황색(🟡) → 청색(🔵) 신호등 자동 점등 및 깜빡임 제어  
-blueBlinkTask: 청색 신호 깜빡임 구현  
-blinkTask: 모든 LED 깜빡이기 모드  
-adjustBrightnessTask: 가변저항을 이용해 LED 밝기 조절 (PWM)  
-serialTask: 100ms마다 p5.js와 Serial JSON 통신으로 신호등 상태 전송  
+  - trafficLightTask: 적색(🔴) → 황색(🟡) → 청색(🔵) 신호등 자동 점등 및 깜빡임 제어  
+  - blueBlinkTask: 청색 신호 깜빡임 구현  
+  - blinkTask: 모든 LED 깜빡이기 모드  
+  - adjustBrightnessTask: 가변저항을 이용해 LED 밝기 조절 (PWM)  
+  - serialTask: 100ms마다 p5.js와 Serial JSON 통신으로 신호등 상태 전송  
 
 
 - 인터럽트를 이용한 버튼 이벤트 처리  
-toggleBlinkMode(): Button1 (5번 핀) → 깜빡이기 모드 ON/OFF  
-toggleRedOnlyMode(): Button2 (6번 핀) → 적색 신호 전용 모드  
-toggleAllLedOff(): Button3 (7번 핀) → 모든 LED OFF 모드  
-attachPCINT()을 활용한 PinChangeInterrupt (FALLING 트리거) 방식으로 버튼 감지
+  - toggleBlinkMode(): Button1 (5번 핀) → 깜빡이기 모드 ON/OFF  
+  - toggleRedOnlyMode(): Button2 (6번 핀) → 적색 신호 전용 모드  
+  - toggleAllLedOff(): Button3 (7번 핀) → 모든 LED OFF 모드  
+  - attachPCINT()을 활용한 PinChangeInterrupt (FALLING 트리거) 방식으로 버튼 감지
 
 
 - Serial 통신을 활용한 실시간 상태 전송 (JSON 형식)  
-sendSerialData(): 신호등 색상, 밝기, 현재 모드를 JSON 데이터로 변환 후 시리얼 전송
+  - sendSerialData(): 신호등 색상, 밝기, 현재 모드를 JSON 데이터로 변환 후 시리얼 전송
 
 
 - TaskScheduler 사용하여 실행 흐름 최적화  
-loop() 내부에서 runner.execute(); 호출하여 모든 Task를 비동기적으로 실행  
-delay() 없이 Task 별 실행 주기를 관리하여 효율적 동작  
+  - loop() 내부에서 runner.execute(); 호출하여 모든 Task를 비동기적으로 실행  
+  - delay() 없이 Task 별 실행 주기를 관리하여 효율적 동작  
 
 
 2️⃣  p5.js 코드 요약 (Serial 통신 + UI를 통한 데이터 인터페이스 가시화)  
