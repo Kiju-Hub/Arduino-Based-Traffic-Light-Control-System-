@@ -58,7 +58,7 @@
  1️⃣  아두이노 코드 요약  
 - TaskScheduler 기반 비동기 신호등 제어  
 
-  - trafficLightTask: 적색(🔴) → 황색(🟡) → 청색(🔵) 신호등 자동 점등 및 깜빡임 제어  
+  - trafficLightTask: 빨간색(🔴) → 노란색(🟡) → 파란색(🔵) 신호등 자동 점등 및 깜빡임 제어  
   - blueBlinkTask: 청색 신호 깜빡임 구현  
   - blinkTask: 모든 LED 깜빡이기 모드  
   - adjustBrightnessTask: 가변저항을 이용해 LED 밝기 조절 (PWM)  
@@ -94,7 +94,7 @@
 
 
 - 신호등 시각화 (모드별 표현)  
-  - Normal Mode: 수신된 JSON 데이터 기반으로 적색(🔴) → 황색(🟡) → 청색(🔵) 순서대로 표현  
+  - Normal Mode: 수신된 JSON 데이터 기반으로 빨간색(🔴) → 노란색(🟡) → 파란색(🔵) 순서대로 표현  
   - Blink Mode: 모든 LED가 깜빡이는 애니메이션 효과 적용  
   - Red Only Mode: 적색 LED만 표시  
   - All Off Mode: 모든 LED OFF  
