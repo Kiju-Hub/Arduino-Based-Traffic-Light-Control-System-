@@ -83,22 +83,22 @@
 
 2️⃣  p5.js 코드 요약 (Serial 통신 + UI를 통한 데이터 인터페이스 가시화)  
 - Serial 통신 연결 및 데이터 수신  
-connectToArduino(): 시리얼 포트 연결 (Baud rate: 9600) 후 데이터 수신  
-readLoop(): Arduino에서 JSON 데이터 수신하여 serialEvent()로 전달  
-serialEvent(data): JSON 데이터를 파싱하여 모드, 밝기, 현재 신호등 상태 업데이트
+  - connectToArduino(): 시리얼 포트 연결 (Baud rate: 9600) 후 데이터 수신  
+  - readLoop(): Arduino에서 JSON 데이터 수신하여 serialEvent()로 전달  
+  - serialEvent(data): JSON 데이터를 파싱하여 모드, 밝기, 현재 신호등 상태 업데이트
 
 
 - UI 생성 및 LED 밝기 가시화  
-setup(): 캔버스(600x500) 생성, LED 밝기(가변저항) 값을 표시하는 슬라이더 추가  
-draw(): 현재 신호등 모드 및 LED 상태를 시각적으로 표현
+  - setup(): 캔버스(600x500) 생성, LED 밝기(가변저항) 값을 표시하는 슬라이더 추가  
+  - draw(): 현재 신호등 모드 및 LED 상태를 시각적으로 표현
 
 
 - 신호등 시각화 (모드별 표현)  
-Normal Mode: 수신된 JSON 데이터 기반으로 적색(🔴) → 황색(🟡) → 청색(🔵) 순서대로 표현  
-Blink Mode: 모든 LED가 깜빡이는 애니메이션 효과 적용  
-Red Only Mode: 적색 LED만 표시  
-All Off Mode: 모든 LED OFF  
-All Blink Mode: 모든 LED 동시 깜빡임  
+  - Normal Mode: 수신된 JSON 데이터 기반으로 적색(🔴) → 황색(🟡) → 청색(🔵) 순서대로 표현  
+  - Blink Mode: 모든 LED가 깜빡이는 애니메이션 효과 적용  
+  - Red Only Mode: 적색 LED만 표시  
+  - All Off Mode: 모든 LED OFF  
+  - All Blink Mode: 모든 LED 동시 깜빡임  
 
 
 
